@@ -26,7 +26,7 @@
 - name: "SECTION | 4.2.2 | Configure journald"
   ansible.builtin.import_tasks:
       file: cis_4.2.2.x.yml
-  when: rhel9cis_syslog == 'journald'
+  #when: rhel9cis_syslog == 'journald'
 
 - name: "SECTION | 4.2.3 | Configure logile perms"
   ansible.builtin.import_tasks:
