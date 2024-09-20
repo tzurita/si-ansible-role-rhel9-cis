@@ -49,7 +49,7 @@
       - name: "5.6.1.2 | PATCH | Ensure minimum days between password changes is configured | Set existing users PASS_MIN_DAYS"
         ansible.builtin.user:
             name: "{{ item }}"
-            password_expire_max: "{{ rhel9cis_pass['min_days'] }}"
+            password_expire_min: "{{ rhel9cis_pass['min_days'] }}"
         loop: "{{ discovered_min_days.stdout_lines }}"
         when:
             - discovered_min_days.stdout_lines | length > 0
